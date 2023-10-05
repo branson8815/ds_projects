@@ -10,5 +10,18 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 api = KaggleApi()
 api.authenticate()  # This will use your credentials from the KAGGLE_CONFIG_DIR
 
-dataset_name = 'nelgiriyewithana/top-spotify-songs-2023'
-api.dataset_download_files(dataset_name, path="/Users/kerouac/Desktop/programming_projects/", unzip=True)
+dataset_name = "nelgiriyewithana/top-spotify-songs-2023"
+api.dataset_download_files(
+    dataset_name,
+    path="/Users/kerouac/Desktop/project_work/programming_projects",
+    unzip=True,
+)
+
+sample_dataset = pd.read_csv(
+    "/Users/kerouac/Desktop/project_work/programming_projects/spotify-2023.csv",
+    encoding="latin1",
+)
+
+print(sample_dataset)
+
+print(sample_dataset.columns)
